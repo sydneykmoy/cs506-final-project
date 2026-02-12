@@ -18,9 +18,9 @@ This project analyzes the relationship between an influential tech CEO's X (Elon
 
 ## Project Goals
 Successfully predict the closing price of Tesla stock based on sentiments expressed in Elon Musk's tweets on Twitter/X with a 65% accuracy rate. 
-* In order to do this we would take the opening price of Tesla, analyze the tweets starting from today to 9AM tomorrow, and then try and predict the closing price of the next day. We would follow the same process for the next two days to see how long it took the effects of the tweet to trickle down to the price of Tesla. Comparing the three prices would show us a better picture of how long it took for the tweet to effect the price. 
+* In order to do this we would take the opening price of Tesla, analyze the tweets starting from today to 9AM tomorrow, and then try and predict the closing price of the next day. We would follow the same process for the next two days to see how long it took the effects of the tweet to trickle down to the price of Tesla. Comparing the three prices would show us a better picture of how long it took for the tweet to affect the price. 
 
-If that isn't feasible then the goal would be to successfully predict how setiments expressed in Elon Musk's tweets on Twitter/X effect the Tesla stock price. Specifically, we would be looking at if we could correctly determine whether a tweet had positive/negative sentiments (and to what degree are they positive/negative) and correctly predict whether the price of Tesla was positively/negatively impacted (if the price hit a high or a low during the day or if the closing price was greater than/less than opening price). 
+If that isn't feasible then the goal would be to successfully predict how sentiments expressed in Elon Musk's tweets on Twitter/X affect the Tesla stock price. Specifically, we would be looking at if we could correctly determine whether a tweet had positive/negative sentiments (and to what degree are they positive/negative) and correctly predict whether the price of Tesla was positively/negatively impacted (if the price hit a high or a low during the day or if the closing price was greater than/less than opening price). 
 
 
 ## Data Collection Plan
@@ -28,7 +28,7 @@ Elon Musk Tweets:
 * Kaggle Dataset of Elon Musk Tweets from 2010 to 2025 (April):
   * https://www.kaggle.com/datasets/dadalyndell/elon-musk-tweets-2010-to-2025-march
 * X API Endpoint
-  * Recent Search Endpoint (avaliable to all developers but only allows searching for tweets from the last seven days -- can be used for testing)
+  * Recent Search Endpoint (available to all developers but only allows searching for tweets from the last seven days -- can be used for testing)
 
  
 Stock Prices:
