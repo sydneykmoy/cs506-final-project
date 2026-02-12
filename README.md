@@ -25,7 +25,7 @@ If that isn't feasible then the goal would be to successfully predict how sentim
 
 
 ## Data Collection Plan
-Using two datasets found on Kaggle. Another potential dataset source for the Elon Musk tweets is through an X API endpoint.
+Creating a dataset from the two datasets from Kaggle, and the associated discussions that go with Elon's tweets which will be retrieved through web scraping. Once this dataset has been created I can then perform the sentiment analysis on each tweet and its message interactions in order to get a better picture of the impact of the calculated sentiment. 
 
 Elon Musk Tweets:
 * Kaggle Dataset of Elon Musk Tweets from 2010 to 2025 (April):
