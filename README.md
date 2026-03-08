@@ -28,11 +28,26 @@ If that isn't feasible then the goal would be to successfully predict how sentim
 Creating a dataset from the two datasets from Kaggle, and the associated discussions that go with Elon's tweets which will be retrieved through web scraping. Once this dataset has been created I can then perform the sentiment analysis on each tweet and its message interactions in order to get a better picture of the impact of the calculated sentiment. 
 
 Elon Musk Tweets:
-* Kaggle Dataset of Elon Musk Tweets from 2010 to 2025 (April):
+* The Complete Musk Tweets (Emotion and Personality Annotation):
   * https://www.kaggle.com/datasets/dadalyndell/elon-musk-tweets-2010-to-2025-march
-* Web scraping to analyze the sentiment of groups of people who interacted with Elon's tweet
-* X API Endpoint
-  * Recent Search Endpoint (available to all developers but only allows searching for tweets from the last seven days -- can be used for testing)
+ 
+  * This dataset contains 60,567 tweets from Elon Musk, spanning from June 4, 2010, to January 24, 2025. Each tweet has been annotated with emotion and personality traits using a machine learning algorithm. The dataset provides a comprehensive view of Musk's online interactions, along with their emotional and psychological characteristics.
+
+  * Data Fields:
+   * text: The content of the tweet.
+characters: The character length of the tweet.
+target: The recipient or mentioned user in the tweet (if applicable).
+type: Whether the tweet is a reply, retweet, or original post.
+favorite_count: Number of likes.
+retweet_count: Number of retweets.
+reply_count: Number of replies.
+view_count: Number of views.
+created_at: Timestamp of the tweet.
+tweet_id: Unique identifier for the tweet.
+emotion: Predicted emotion label (neutral, fear, anger, joy, disgust, sadness, surprise).
+Emotion Scores: neutral, fear, anger, joy, disgust, sadness, surprise: Numerical probabilities indicating the strength of each emotion in the tweet.
+Personality Traits scores: neutral, fear, anger, joy, disgust, sadness, surprise: 
+Annotation Method: The emotion and personality labels were assigned using a machine learning model trained on psychological and linguistic features. Each tweet is assigned a probability score for each personality trait and emotional category (see the report for a detailed description of the annotation process).
 
  
 Stock Prices:
