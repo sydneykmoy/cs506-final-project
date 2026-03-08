@@ -34,7 +34,7 @@ Elon Musk Tweets:
   * This dataset contains 60,567 tweets from Elon Musk, spanning from June 4, 2010, to January 24, 2025. Each tweet has been annotated with emotion and personality traits using a machine learning algorithm. The dataset provides a comprehensive view of Musk's online interactions, along with their emotional and psychological characteristics.
 
   * Data Fields:
-   * text: The content of the tweet.
+    * text: The content of the tweet.
 characters: The character length of the tweet.
 target: The recipient or mentioned user in the tweet (if applicable).
 type: Whether the tweet is a reply, retweet, or original post.
