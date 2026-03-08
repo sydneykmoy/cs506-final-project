@@ -35,20 +35,19 @@ Elon Musk Tweets:
 
   * Data Fields:
     * text: The content of the tweet.
-characters: The character length of the tweet.
-target: The recipient or mentioned user in the tweet (if applicable).
-type: Whether the tweet is a reply, retweet, or original post.
-favorite_count: Number of likes.
-retweet_count: Number of retweets.
-reply_count: Number of replies.
-view_count: Number of views.
-created_at: Timestamp of the tweet.
-tweet_id: Unique identifier for the tweet.
-emotion: Predicted emotion label (neutral, fear, anger, joy, disgust, sadness, surprise).
-Emotion Scores: neutral, fear, anger, joy, disgust, sadness, surprise: Numerical probabilities indicating the strength of each emotion in the tweet.
-Personality Traits scores: neutral, fear, anger, joy, disgust, sadness, surprise: 
-Annotation Method: The emotion and personality labels were assigned using a machine learning model trained on psychological and linguistic features. Each tweet is assigned a probability score for each personality trait and emotional category (see the report for a detailed description of the annotation process).
-
+    * characters: The character length of the tweet.
+    * target: The recipient or mentioned user in the tweet (if applicable).
+    * type: Whether the tweet is a reply, retweet, or original post.
+    * favorite_count: Number of likes.
+    * retweet_count: Number of retweets.
+    * reply_count: Number of replies.
+    * view_count: Number of views.
+    * created_at: Timestamp of the tweet.
+    * tweet_id: Unique identifier for the tweet.
+    * emotion: Predicted emotion label (neutral, fear, anger, joy, disgust, sadness, surprise).
+    * Emotion Scores: neutral, fear, anger, joy, disgust, sadness, surprise: Numerical probabilities indicating the strength of each emotion in the tweet.
+    * Personality Traits scores: neutral, fear, anger, joy, disgust, sadness, surprise:
+  * Annotation Method: The emotion and personality labels were assigned using a machine learning model trained on psychological and linguistic features. Each tweet is assigned a probability score for each personality trait and emotional category (see the report for a detailed description of the annotation process).
  
 Stock Prices:
 * Kaggle Dataset of Tesla Stock Prices from 2010 to 2025:
