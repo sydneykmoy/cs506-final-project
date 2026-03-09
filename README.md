@@ -29,7 +29,7 @@ Creating a dataset from the two datasets from Kaggle, and the associated discuss
 
 ### Elon Musk Tweets:
 * The Complete Musk Tweets (Emotion and Personality Annotation):
-  * [https://www.kaggle.com/datasets/dadalyndell/elon-musk-tweets-2010-to-2025-march](https://zenodo.org/records/14836471)
+  * [https://zenodo.org/records/14836471]
 * This dataset was downloaded with permission from the report "PROFILING ELON MUSK’S TWITTER/X
 EVOLUTION POLITICAL THOUGHT, PUBLIC PERSONA, AND INFLUENCE" written by Professors Marc Owen Jones & George Mikros, published on March 21st, 2025.
  
