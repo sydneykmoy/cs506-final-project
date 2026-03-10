@@ -5,7 +5,7 @@ Sydney Moy
 ## Project Description 
 Elon Musk, CEO of Tesla, is an extremely influential public figure with over 233 million followers on X. His tweets are constantly referenced, retweeted, replied to, or reported on, often shaping public perception of Tesla and the markets it's a part of. Because investor sentiment can be shaped by public opinion, these tweets have real-life economic effects, including fluctuations in Tesla's stock price and trading activity. 
 
-This project analyzes the relationship between an influential tech CEO's X (Elon Musk) activity and corresponding stock price movements. It will use two datasets retrieved from Kaggle to find the correlation between the sentiment of his tweets and the return on Tesla for the next day (and the day after, and the day after that).
+This project analyzes the relationship between an influential tech CEO's X (Elon Musk) activity and corresponding stock price movements. It will use a dataset retrieved from Kaggle and another dataset retrived from Zenodo to find the correlation between the sentiment of his tweets and the return on Tesla for the next day (and the day after, and the day after that).
 
 ### Timeline (8 weeks)
 * Week 1-2: Data Exploration and Cleaning (of both datasets)
@@ -25,7 +25,7 @@ If that isn't feasible then the goal would be to successfully predict how sentim
 
 
 ## Data Collection Plan
-Creating a dataset from the two datasets from Kaggle, and the associated discussions that go with Elon's tweets which will be retrieved through web scraping. Once this dataset has been created I can then perform the sentiment analysis on each tweet and its message interactions in order to get a better picture of the impact of the calculated sentiment. 
+Creating a dataset from the Kaggle dataset and the dataset found on Zenodo. The dataset found on Zenodo already includes the sentiment analysis of each tweet so the next steps would be creating a new dataset that combines it with the dataset of stock prices, matching values based on the date that the tweet was created and the price of the stock price. 
 
 ### Elon Musk Tweets:
 * The Complete Musk Tweets (Emotion and Personality Annotation):
@@ -65,4 +65,3 @@ DOI: 10.5281/zenodo.15062791
 
 
 ## Modeling The Data 
-Thinking about using VADER for sentiment analysis but I'm not sure if that's allowed for this project. 
