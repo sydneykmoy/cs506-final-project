@@ -28,7 +28,7 @@ If that isn't feasible then the goal would be to successfully predict how sentim
 Creating a dataset from the Kaggle dataset and the dataset found on Zenodo. The dataset found on Zenodo already includes the sentiment analysis of each tweet so the next steps would be creating a new dataset that combines it with the dataset of stock prices, matching values based on the date that the tweet was created and the price of the stock price. 
 
 ### Elon Musk Tweets:
-* The Complete Musk Tweets (Emotion and Personality Annotation):
+The Complete Musk Tweets (Emotion and Personality Annotation):
   * [https://zenodo.org/records/14836471]
 * This dataset was downloaded with permission from the report "PROFILING ELON MUSK’S TWITTER/X
 EVOLUTION POLITICAL THOUGHT, PUBLIC PERSONA, AND INFLUENCE" written by Professors Marc Owen Jones & George Mikros, published on March 21st, 2025.
@@ -60,8 +60,24 @@ DOI: 10.5281/zenodo.15062791
 
 
 ### Stock Prices:
-* Kaggle Dataset of Tesla Stock Prices from 2010 to 2025:
+Kaggle Dataset of Tesla Stock Prices from 2010 to 2025:
   * https://www.kaggle.com/datasets/iamtanmayshukla/tesla-stocks-dataset
+
+  * This dataset (when downloaded from Kaggle) consists of three separate CSV files.
+      * TSLA-2.csv contains stock prices from 2010-06-29 to 2024-08-22.
+      * HistoricalData_1726367135218.csv contains stock prices from 09/15/2014 to 09/13/2024.
+      * tsla_2025.csv contains stock prices from 2010-06-28 to 2025-01-17.
+      * 
+    * Due to tsla_2025.csv being the most comprehensive, that is the csv file used to create our new dataset.
+
+    * Data Fields:
+      * Date (year/mm/dd)
+      * Open
+      * High
+      * Low
+      * Close
+      * Adjusted Close
+      * Volume
 
 
 ## Modeling The Data 
