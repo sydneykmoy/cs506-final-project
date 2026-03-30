@@ -91,6 +91,7 @@ Kaggle Dataset of Tesla Stock Prices from 2010 to 2025:
     * str: text, characters, target, type, created_at, emotion
     * int64: favorite_count, retweet_count, reply_count, view_count
     * object: tweet_id
+      * This kept throwing a "DtypeWarning: Columns (0: tweet_id) have mixed types. Specify dtype option on import or set low_memory=False." which I resolved by specifying dtype on import.
     * float64: neutral, fear, anger, joy, disgust, sadness, surprise, agreeableness, openness, conscientiousness, extraversion, neuroticism
   * Checked for any missing values in the columns
     * Only text had one missing value
