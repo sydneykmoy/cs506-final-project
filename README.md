@@ -29,7 +29,7 @@ Creating a dataset from the Kaggle dataset and the dataset found on Zenodo. The 
 
 ### Elon Musk Tweets:
 The Complete Musk Tweets (Emotion and Personality Annotation):
-  * [https://zenodo.org/records/14836471]
+  * https://zenodo.org/records/14836471
 * This dataset was downloaded with permission from the report "PROFILING ELON MUSK’S TWITTER/X
 EVOLUTION POLITICAL THOUGHT, PUBLIC PERSONA, AND INFLUENCE" written by Professors Marc Owen Jones & George Mikros, published on March 21st, 2025.
  
@@ -67,9 +67,7 @@ Kaggle Dataset of Tesla Stock Prices from 2010 to 2025:
       * TSLA-2.csv contains stock prices from 2010-06-29 to 2024-08-22.
       * HistoricalData_1726367135218.csv contains stock prices from 09/15/2014 to 09/13/2024.
       * tsla_2025.csv contains stock prices from 2010-06-28 to 2025-01-17.
-      * 
-    * Due to tsla_2025.csv being the most comprehensive, that is the csv file used to create our new dataset.
-
+  * Due to tsla_2025.csv being the most comprehensive, that is the csv file used to create our new dataset.
     * Data Fields:
       * Date (year/mm/dd)
       * Open
@@ -79,5 +77,41 @@ Kaggle Dataset of Tesla Stock Prices from 2010 to 2025:
       * Adjusted Close
       * Volume
 
+## Preliminary Data Visualizations
+### Elon Musk Tweets:
 
-## Modeling The Data 
+
+### Stock Prices:
+
+
+## Data Processing
+### Elon Musk Tweets:
+  * Checked the shape of the dataframe: (60567, 23)
+  * Checked the data types of the columns of the df
+    * str: text, characters, target, type, created_at, emotion
+    * int64: favorite_count, retweet_count, reply_count, view_count
+    * object: tweet_id
+    * float64: neutral, fear, anger, joy, disgust, sadness, surprise, agreeableness, openness, conscientiousness, extraversion, neuroticism
+  * Checked for any missing values in the columns
+    * Only text had one missing value
+  * Dropped unnecessary columns because sentiment analysis has already been performed
+    * Columns Dropped: text, target, type, tweet_id
+  * Converted the characters column from string to int to make it easier to work with later on
+    * When trying to convert the characters column I discovered that some of the rows contained a non-numeric value "#VALUE!" and removed those rows.
+
+### Stock Prices:
+
+
+## Data Modeling
+### Elon Musk Tweets:
+
+
+### Stock Prices:
+
+
+## Preliminary Results
+### Elon Musk Tweets:
+
+
+### Stock Prices:
+
