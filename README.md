@@ -79,25 +79,25 @@ Kaggle Dataset of Tesla Stock Prices from 2010 to 2025:
 
 ## Preliminary Data Visualizations
 ### Elon Musk Tweets:
-Pie Chart Showing Distribution of Emotions Found in His Tweets:
+#### Pie Chart Showing Distribution of Emotions Found in His Tweets:
 <img width="420" height="389" alt="image" src="https://github.com/user-attachments/assets/8f7640b4-75e9-4c97-9fd2-81f487f686c8" />
 
 
 ### Stock Prices:
-Histograms of Adjusted Close and Volume:
+#### Histograms of Adjusted Close and Volume:
 <img width="1189" height="515" alt="image" src="https://github.com/user-attachments/assets/d9ad3856-f6f4-4454-8adf-38ec386375f7" />
   * What The Adjusted Close Histogram Tells Us:
     * Heavy Right Skew (prices were clustered near $0-$50 with a long tail that stretches to around $420)
-      &rarr stock spent most of its time being traded cheaply before a massive increase (mostly low prices)
+      &ensp; &emsp; &rarr; stock spent most of its time being traded cheaply before a massive increase (mostly low prices)
     * Two Humps (one around $0-$50 and another around $150-$300)
-      &rarr two distinct "eras" in stock price
+      &rarr; two distinct "eras" in stock price
       * Early Years (low prices)
       * Later Growth Period (high prices)
   * What The Volume Histogram Tells Us:
     * Right Skew (but less dramatic)
-      &rarr most days around 0.5B-2B shares were traded with some outliers
+      &rarr; most days around 0.5B-2B shares were traded with some outliers
     * Relatively Smooth Shape
-      &rarr trading activity is more consistent over time than price level
+      &rarr; trading activity is more consistent over time than price level
 
 
 Time Series Plot:
