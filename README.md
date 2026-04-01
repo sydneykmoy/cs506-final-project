@@ -89,7 +89,7 @@ Kaggle Dataset of Tesla Stock Prices from 2010 to 2025:
 
   * What The Adjusted Close Histogram Tells Us:
     * Heavy Right Skew (prices were clustered near $0-$50 with a long tail that stretches to around $420)
-      &ensp; &emsp; &rarr; stock spent most of its time being traded cheaply before a massive increase (mostly low prices)
+      &rarr; stock spent most of its time being traded cheaply before a massive increase (mostly low prices)
     * Two Humps (one around $0-$50 and another around $150-$300)
       &rarr; two distinct "eras" in stock price
       * Early Years (low prices)
@@ -103,7 +103,10 @@ Kaggle Dataset of Tesla Stock Prices from 2010 to 2025:
 
 #### Time Series Plot:
 <img width="1141" height="470" alt="image" src="https://github.com/user-attachments/assets/c62bd284-daf5-4d91-9e08-d708381dae00" />
+Shows us what Tesla's stock price looked like over the time period our dataset covers
 
+  * Prices were low and pretty consistent before starting to rapidly increase around June 4th, 2020
+  * Spikes around the middle of 2021 before starting to decrease with less dramatic spikes and falls afterward
 
 
 
