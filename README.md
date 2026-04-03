@@ -81,7 +81,10 @@ Kaggle Dataset of Tesla Stock Prices from 2010 to 2025:
 ### Elon Musk Tweets:
 #### Pie Chart Showing Distribution of Emotions Found in His Tweets:
 <img width="420" height="389" alt="image" src="https://github.com/user-attachments/assets/8f7640b4-75e9-4c97-9fd2-81f487f686c8" />
-
+Shows us the distribution of emotion found in Elon Musk's tweets. 
+  * Majority of his tweets are actually neutral in sentiment, contrary to most people's expectations
+  * Second biggest category is surprise, closely followed by anger, and at a slightly further distance joy
+  * 
 
 ### Stock Prices:
 #### Histograms of Adjusted Close and Volume:
@@ -108,6 +111,12 @@ Shows us what Tesla's stock price looked like over the time period our dataset c
   * Prices were low and pretty consistent before starting to rapidly increase around June 4th, 2020
   * Spikes around the middle of 2021 before starting to decrease with less dramatic spikes and falls afterward
 
+
+#### Distribution of Daily Returns 
+<img width="676" height="374" alt="image" src="https://github.com/user-attachments/assets/ceed612b-9dbe-49eb-8f2a-ca19c5dde120" />
+Shows us how big changes in day-to-day stock price are and how often big changes happen (if there are any)
+  * Computes each day's percent change and creates a histogram using those values
+    * Narrow, tall bell curve centered at 0  &rarr; mostly small, predictable daily moves
 
 
 ## Data Processing
