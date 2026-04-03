@@ -77,6 +77,7 @@ Kaggle Dataset of Tesla Stock Prices from 2010 to 2025:
       * Adjusted Close
       * Volume
 
+
 ## Preliminary Data Visualizations
 ### Elon Musk Tweets:
 #### Pie Chart Showing Distribution of Emotions Found in His Tweets
@@ -107,6 +108,7 @@ Shows us that Musk prefers shorter tweets as opposed to longer ones.
   * View Count Over Time
     * There is one spike (outlier) in view counts that doesn't have as dramatic corresponding retweet and like counts. It takes place 
     * There are zero view counts before 2023 because Twitter only added this feature at the end of 2022.[^1]
+
 
 [^1]: Chandra Steele, “Twitter Rolls Out ‘View Count’ Feature,” PCMag, December 23, 2022, https://www.pcmag.com/news/twitter-rolls-out-view-count-feature.
 
@@ -140,6 +142,7 @@ Shows us what Tesla's stock price looked like over the time period our dataset c
 
 #### Distribution of Daily Returns 
 <img width="676" height="374" alt="image" src="https://github.com/user-attachments/assets/ceed612b-9dbe-49eb-8f2a-ca19c5dde120" />
+
 Shows us how big changes in day-to-day stock price are and how often big changes happen (if there are any)
   * Computes each day's percent change and creates a histogram using those values
     * Narrow, tall bell curve centered at 0  &rarr; mostly small, predictable daily moves
