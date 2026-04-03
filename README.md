@@ -79,15 +79,41 @@ Kaggle Dataset of Tesla Stock Prices from 2010 to 2025:
 
 ## Preliminary Data Visualizations
 ### Elon Musk Tweets:
-#### Pie Chart Showing Distribution of Emotions Found in His Tweets:
-<img width="420" height="389" alt="image" src="https://github.com/user-attachments/assets/8f7640b4-75e9-4c97-9fd2-81f487f686c8" />
+#### Pie Chart Showing Distribution of Emotions Found in His Tweets
+<img width="605" height="458" alt="image" src="https://github.com/user-attachments/assets/b757e9f7-a692-4298-be30-b016b1ef9382" />
+
 Shows us the distribution of emotion found in Elon Musk's tweets. 
   * Majority of his tweets are actually neutral in sentiment, contrary to most people's expectations
   * Second biggest category is surprise, closely followed by anger, and at a slightly further distance joy
-  * 
+
+
+#### Pie Chart Showing Distribution of Tweet Types
+<img width="706" height="668" alt="image" src="https://github.com/user-attachments/assets/1d2fc701-69df-43b6-8b39-b16a7c54993c" />
+
+Shows us the distribution of tweets found in Elon Musk's tweets.
+  * Surprisingly, a little bit more than half of them are replies, followed by replies to, then tweets, and then a basically negligible amount of quotes and mentions.
+
+
+#### Histogram of Character Count
+<img width="797" height="500" alt="image" src="https://github.com/user-attachments/assets/8e7ab8b0-315e-4d61-b030-61cf3cca9ede" />
+Shows us that Musk prefers shorter tweets as opposed to longer ones. 
+
+
+#### Time Series Plot of Engagement Over Time
+<img width="1399" height="1000" alt="image" src="https://github.com/user-attachments/assets/da6c8574-cd86-4ad5-9e3a-9a5cc250edc7" />
+
+  * Likes Over Time and Retweets Over Time
+    *  Both plots look pretty similar, however when observing the graphs we need to keep in mind that likes is in terms of milions while retweets is in terms of hundred thousands. Tweets get almost 10x the amount of likes than retweets. 
+  * View Count Over Time
+    * There is one spike (outlier) in view counts that doesn't have as dramatic corresponding retweet and like counts. It takes place 
+    * There are zero view counts before 2023 because Twitter only added this feature at the end of 2022.[^1]
+
+[^1]: Chandra Steele, “Twitter Rolls Out ‘View Count’ Feature,” PCMag, December 23, 2022, https://www.pcmag.com/news/twitter-rolls-out-view-count-feature.
+
+
 
 ### Stock Prices:
-#### Histograms of Adjusted Close and Volume:
+#### Histograms of Adjusted Close and Volume
 <img width="1189" height="515" alt="image" src="https://github.com/user-attachments/assets/d9ad3856-f6f4-4454-8adf-38ec386375f7" />
 
   * What The Adjusted Close Histogram Tells Us:
@@ -104,7 +130,7 @@ Shows us the distribution of emotion found in Elon Musk's tweets.
       &rarr; trading activity is more consistent over time than price level
 
 
-#### Time Series Plot:
+#### Time Series Plot
 <img width="1141" height="470" alt="image" src="https://github.com/user-attachments/assets/c62bd284-daf5-4d91-9e08-d708381dae00" />
 Shows us what Tesla's stock price looked like over the time period our dataset covers
 
@@ -128,26 +154,30 @@ Shows us how big changes in day-to-day stock price are and how often big changes
     * object: tweet_id
       * This kept throwing a "DtypeWarning: Columns (0: tweet_id) have mixed types. Specify dtype option on import or set low_memory=False." which I resolved by specifying dtype on import.
     * float64: neutral, fear, anger, joy, disgust, sadness, surprise, agreeableness, openness, conscientiousness, extraversion, neuroticism
+  * Converted both date columns into datetime types so that they match
+    * Had to sort the dataset for the Musk Tweets to match the order of the Tesla tweets dataset
   * Checked for any missing values in the columns
     * Only text had one missing value
-  * Dropped unnecessary columns because sentiment analysis has already been performed
-    * Columns Dropped: text, target, type, tweet_id
+  * Dropped unnecessary columns
+    * Columns Dropped: text, target, tweet_id
+      * Because sentiment analysis has already been performed
+    * Columns Dropped: agreeableness, openness, conscientiousness, extraversion, neuroticism
+      * Because these are analyses on Elon Musk's personality in his tweets, which is unnecessary for stock price prediction
   * Converted the characters column from string to int to make it easier to work with later on
     * When trying to convert the characters column I discovered that some of the rows contained a non-numeric value "#VALUE!" and removed those rows.
 
 ### Stock Prices:
+  * Added a column for daily return (which I calculated for every row and will become the label for the merged dataset)
+
+### Combining The Two:
+  * Trimmed the two datasets so that they were looking at the same time period
 
 
 ## Data Modeling
-### Elon Musk Tweets:
-
-
-### Stock Prices:
+  * Linear Regression Model:
+    * Trying to predict the closing return based on the sentiments expressed in his tweets and seeing how long effects take to trickle down, or if they do at all 
 
 
 ## Preliminary Results
-### Elon Musk Tweets:
 
-
-### Stock Prices:
 
