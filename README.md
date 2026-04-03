@@ -174,6 +174,9 @@ Shows us how big changes in day-to-day stock price are and how often big changes
 
 ### Combining The Two:
   * Trimmed the two datasets so that they were looking at the same time period
+  * Aggregated the multiple tweets per day into one row
+    *  Haven't decided on how to do this yet
+  * Combined the two datasets using the date column 
 
 
 ## Data Modeling
