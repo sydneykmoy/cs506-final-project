@@ -157,7 +157,8 @@ Shows us how big changes in day-to-day stock price are and how often big changes
     * object: tweet_id
       * This kept throwing a "DtypeWarning: Columns (0: tweet_id) have mixed types. Specify dtype option on import or set low_memory=False." which I resolved by specifying dtype on import.
     * float64: neutral, fear, anger, joy, disgust, sadness, surprise, agreeableness, openness, conscientiousness, extraversion, neuroticism
-  * Converted both date columns into datetime types so that they match
+  * Converted the created_at (date) column into a datetime type so that it matches with the Tesla dataset
+    * Had to set format='mixed', which means each format will be inferred for each individual element, because some hours were written with single digits (ex. 0:59, 1:16) while other were written using double digits (ex. 19:14, 23:47)
     * Had to sort the dataset for the Musk Tweets to match the order of the Tesla tweets dataset
   * Checked for any missing values in the columns
     * Only text had one missing value
@@ -170,12 +171,38 @@ Shows us how big changes in day-to-day stock price are and how often big changes
     * When trying to convert the characters column I discovered that some of the rows contained a non-numeric value "#VALUE!" and removed those rows.
 
 ### Stock Prices:
+  * Converted date column into datetime types so that it matches with the Tweets dataset
   * Added a column for daily return (which I calculated for every row and will become the label for the merged dataset)
 
 ### Combining The Two:
   * Trimmed the two datasets so that they were looking at the same time period
-  * Aggregated the multiple tweets per day into one row
-    *  Haven't decided on how to do this yet
+  * Aggregated the multiple tweets per day by creating new features (to be used in our model)
+    * We want to know the total daily reach because that gives a better sense of how many people may act upon his words
+      * total_likes: sum of likes across all his tweets that day
+      * total_retweets: sum of retweets across all his tweets that day
+      * total_views: sum of views across all his tweets that day
+
+    * We want to know the overall emotional tone of the day's tweets, which is why we take the mean of each emotion score
+      * avg_joy: mean of the joy emotion scores of all his tweets from that day
+      * avg_anger: mean of the anger emotion scores of all his tweets from that day
+      * avg_fear: mean of the fear emotion scores of all his tweets from that day
+      * avg_sadness: mean of the sadness emotion scores of all his tweets from that day
+      * avg_neutral: mean of the neutral emotion scores of all his tweets from that day
+      * avg_disgust: mean of the disgust emotion scores of all his tweets from that day
+      * avg_surprise: mean of the surprise emotion scores of all his tweets from that day
+
+    * We want to know what emotion dominated the day's tweets
+      * dominant_emotion: most common emotion of the day
+    
+    * Tweet frequency might be important
+      * tweet_count: how many tweets were tweeted that day
+      * More tweets could mean an event/news that greatly effects the world -- and therefore the stock market -- has happened, more people are reached/influenced, etc.
+      * Less tweets could mean a slowdown, nothing newsworthy and therefore influential has happened, etc.
+     
+    * Character length could influence how much influence the tweet has
+      * avg_length: mean of the character lengths of the tweets of the day
+      * Longer tweets may contain more substance
+      * Shorter tweets, like a tweet that consists of a single emoji, probably aren't going to have much influence
   * Combined the two datasets using the date column 
 
 
