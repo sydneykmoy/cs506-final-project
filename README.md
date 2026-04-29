@@ -250,4 +250,5 @@ Why This Is?
   * Random Forest has a lower score than Logistic Regression which suggests that the model is overfitting.
   * Feature importance from RF is pretty similar across all 5 features which means there aren't any very stron predictors.
   * The tweets aren't specifically about Tesla, Musk tweets about everything and anything that crosses his mind which creates a lot of noise.
-  * Missing view count values before 2023 means that 60% of my dataset has 0 views for those tweets, which definitely negatively impacts my results. 
+  * Missing view count values before 2023 means that 60% of my dataset has 0 views for those tweets, which definitely negatively impacts my results.
+    * Removing total_views from the feature set produced negligible changes in model performance, which tells us that it carried no meaningful predictive signal. 
