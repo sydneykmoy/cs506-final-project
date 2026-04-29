@@ -207,10 +207,47 @@ Shows us how big changes in day-to-day stock price are and how often big changes
 
 
 ## Data Modeling
-  * Linear Regression Model:
-    * Trying to predict the closing return based on the sentiments expressed in his tweets and seeing how long effects take to trickle down, or if they do at all 
 
+<img width="1742" height="659" alt="image" src="https://github.com/user-attachments/assets/92d4a200-8122-43bf-9c0c-1dcb313c0454" />
+  * Linear Regression Model
+  * Random Forest
 
 ## Preliminary Results
+<img width="1742" height="659" alt="image" src="https://github.com/user-attachments/assets/92d4a200-8122-43bf-9c0c-1dcb313c0454" />
 
+### Linear Regression Model:
+  * Same Day:
+    * R²: -0.0424
+    * RMSE: 0.0368
+  * Next Day:
+    * R²: -0.0358
+    * RMSE: 0.0367
 
+### Random Forest
+  * Same Day:
+   * R²: -0.1328
+   * RMSE: 0.0384
+   * Top 5 Most Important Features:
+     * avg_fear          0.109305
+     * avg_disgust       0.102604
+     * total_likes       0.100030
+     * total_retweets    0.096507
+     * avg_length        0.096434
+ * Next Day:
+   * R²: -0.0673
+   * RMSE: 0.0373
+   * Top 5 Most Important Features:
+     * avg_fear        0.104537
+     * avg_disgust     0.099552
+     * avg_length      0.099213
+     * avg_surprise    0.094639
+     * avg_anger       0.094535
+
+### Analysis
+Negative R² values means both models are performing even worse than just predicting the stock return every day. 
+Why This Is?
+  * Hundreds of factors affect stock prices, just tweet sentiment isn't enough.
+  * Random Forest has a lower score than Logistic Regression which suggests that the model is overfitting.
+  * Feature importance from RF is pretty similar across all 5 features which means there aren't any very stron predictors.
+  * The tweets aren't specifically about Tesla, Musk tweets about everything and anything that crosses his mind which creates a lot of noise.
+  * Missing view count values before 2023 means that 60% of my dataset has 0 views for those tweets, which definitely negatively impacts my results. 
