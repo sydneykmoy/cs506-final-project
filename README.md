@@ -11,7 +11,6 @@ This project analyzes the relationship between an influential tech CEO's X (Elon
 cs506-final-project/
 
 │
-
 ├── main.py
 
 ├── data_processing.py
