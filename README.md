@@ -226,6 +226,10 @@ Shows us how big changes in day-to-day stock price are and how often big changes
      * avg_surprise    0.094639
      * avg_anger       0.094535
 
+<img width="1598" height="799" alt="image" src="https://github.com/user-attachments/assets/a75ad56b-0c78-4b76-8e02-303b7c495bdd" />
+
+<img width="1598" height="798" alt="image" src="https://github.com/user-attachments/assets/59faadc8-6013-4896-b1ac-52f10756a522" />
+
 
 ### Analysis
 Negative R² values means both models are performing even worse than just predicting the stock return every day. 
