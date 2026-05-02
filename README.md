@@ -7,6 +7,14 @@ Elon Musk, CEO of Tesla, is an extremely influential public figure with over 233
 
 This project analyzes the relationship between an influential tech CEO's X (Elon Musk) activity and corresponding stock price movements. It looks at whether Elon Musk’s tweet activity, tweet engagement, and emotion scores can help predict Tesla stock daily returns. It will use a dataset retrieved from Kaggle and another dataset retrived from Zenodo to find the correlation between the sentiment of his tweets and the return on Tesla for the next day (and the day after, and the day after that).
 
+### Timeline (8 weeks)
+* Week 1-2: Data Exploration and Cleaning (of both datasets)
+* Week 2-3: Feature Extraction
+* Week 3-5: Sentiment Analysis Implementation and Validation
+* Week 5-6: Data Visualization
+* Week 6-7: Model Training and Evaluation
+* Week 7-8: Validation, Documentation, and Presentation Preparation 
+
 ## Project Structure 
 
 ```text
@@ -51,15 +59,6 @@ To check your Python version on Windows, in powershell run: py --version
 2. Install required packages by running "make install"
 3. Run the project by running "make run"
    * If that doesn't work open up a terminal and run "python main.py" or "py main.py" for Windows to run the entire project
-
-
-### Timeline (8 weeks)
-* Week 1-2: Data Exploration and Cleaning (of both datasets)
-* Week 2-3: Feature Extraction
-* Week 3-5: Sentiment Analysis Implementation and Validation
-* Week 5-6: Data Visualization
-* Week 6-7: Model Training and Evaluation
-* Week 7-8: Validation, Documentation, and Presentation Preparation 
 
 
 ## Project Goals
