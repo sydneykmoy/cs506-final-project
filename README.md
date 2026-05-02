@@ -5,7 +5,52 @@ Sydney Moy
 ## Project Description 
 Elon Musk, CEO of Tesla, is an extremely influential public figure with over 233 million followers on X. His tweets are constantly referenced, retweeted, replied to, or reported on, often shaping public perception of Tesla and the markets it's a part of. Because investor sentiment can be shaped by public opinion, these tweets have real-life economic effects, including fluctuations in Tesla's stock price and trading activity. 
 
-This project analyzes the relationship between an influential tech CEO's X (Elon Musk) activity and corresponding stock price movements. It will use a dataset retrieved from Kaggle and another dataset retrived from Zenodo to find the correlation between the sentiment of his tweets and the return on Tesla for the next day (and the day after, and the day after that).
+This project analyzes the relationship between an influential tech CEO's X (Elon Musk) activity and corresponding stock price movements. It looks at whether Elon Musk’s tweet activity, tweet engagement, and emotion scores can help predict Tesla stock daily returns. It will use a dataset retrieved from Kaggle and another dataset retrived from Zenodo to find the correlation between the sentiment of his tweets and the return on Tesla for the next day (and the day after, and the day after that).
+
+## Project Structure 
+cs506-final-project/
+│
+├── main.py
+├── data_processing.py
+├── models.py
+├── visualization.py
+│
+├── The Complete Musk_comprehensive (Emotion and Personality Annotation).csv
+├── TSLA-2.csv
+│
+└── README.md
+
+main.py
+Runs the full project. It loads the data, processes the data, trains the models, evaluates performance, and creates visualizations.
+
+data_processing.py
+Handles loading, cleaning, date conversion, trimming, tweet aggregation, feature engineering, same-day merging, and next-day merging.
+
+models.py
+Contains the model training and evaluation function. It trains Linear Regression and Random Forest models and reports R², RMSE, predictions, and feature importances.
+
+visualization.py
+Contains plotting functions for model metrics, top feature importances, and model performance over time.
+
+## How to Get Started
+### Supported Environment
+This project requires Python 3.9 or newer. It was tested using Python 3.14.2 on Windows.
+
+Required Python packages are listed in `requirements.txt`:
+- pandas >= 2.0.0
+- numpy >= 1.24.0
+- matplotlib >= 3.7.0
+- seaborn >= 0.12.0
+- scikit-learn >= 1.3.0
+
+To check your Python version on Windows, in powershell run: py --version
+
+### To Download, Build, and Run The Code
+1. Download or clone the project (make sure to put all files, including CSV files, into the same folder)
+2. Install required packages by running "make install"
+3. Run the project by running "make run"
+   * If that doesn't work open up a terminal and run "python main.py" or "py main.py" for Windows to run the entire project
+
 
 ### Timeline (8 weeks)
 * Week 1-2: Data Exploration and Cleaning (of both datasets)
@@ -22,10 +67,6 @@ Successfully predict the approximate direction and magnitude of the return on Te
 
 If that isn't feasible then the goal would be to successfully predict how sentiments expressed in Elon Musk's tweets on Twitter/X affect the Tesla stock price. 
 * Specifically, we would be looking at if we could correctly determine whether the aggregrate tweets had positive/negative sentiments (and to what degree are they positive/negative) and correctly predict whether the price of Tesla was positively/negatively impacted (if the price hit a high or a low during the day or if the closing price was greater than/less than the opening price). 
-
-
-## How to Run and Build The Code
-
 
 
 ## Data Collection Plan
