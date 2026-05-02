@@ -61,6 +61,7 @@ To check your Python version on Windows, in powershell run: py --version
 ### To Download, Build, and Run The Code
 1. Download or clone the project (make sure to put all files, including CSV files, into the same folder)
 2. Install required packages by running "make install"
+   * If that doesn't work open up a terminal and run "python -m pip install -r requirements.txt" or "py -m pip install -r requirements.txt"
 3. Run the project by running "make run"
    * If that doesn't work open up a terminal and run "python main.py" or "py main.py" for Windows to run the entire project
    * In order to create/see the visualizations shown below you have to uncomment out some lines in the main file (they're labeled)
