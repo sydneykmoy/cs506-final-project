@@ -7,6 +7,10 @@ Elon Musk, CEO of Tesla, is an extremely influential public figure with over 233
 
 This project analyzes the relationship between an influential tech CEO's X (Elon Musk) activity and corresponding stock price movements. It looks at whether Elon Musk’s tweet activity, tweet engagement, and emotion scores can help predict Tesla stock daily returns. It will use a dataset retrieved from Kaggle and another dataset retrived from Zenodo to find the correlation between the sentiment of his tweets and the return on Tesla for the next day (and the day after, and the day after that).
 
+
+Youtube Link: https://youtu.be/SHgo_20A3po
+
+
 ### Timeline (8 weeks)
 * Week 1-2: Data Exploration and Cleaning (of both datasets)
 * Week 2-3: Feature Extraction
@@ -187,7 +191,9 @@ Shows us what Tesla's stock price looked like over the time period our dataset c
 
 #### Distribution of Daily Returns 
 <img width="799" height="396" alt="image" src="https://github.com/user-attachments/assets/8010f7ef-c3ad-4505-9b60-ee0d520bcddf" />
+
 Shows us how big changes in day-to-day stock price are and how often big changes happen (if there are any)
+
   * Computes each day's percent change and creates a histogram using those values
     * Narrow, tall bell curve centered at 0  &rarr; mostly small, predictable daily moves
 
@@ -268,7 +274,7 @@ Relationship probably isn't linear therefore RF might perform better as it captu
 
      * Average Values: 0.104537, 0.099552, 0.099213, 0.094639, 0.094535
 
-Used both types of models to try and cover all of my bases.
+Used both types of models in order to try and cover all of my bases. Used R² and RMSE scores for evaluation because R² measures how much variation in Tesla daily returns the models could explain compared to a baseline average-return prediction while RMSE measures the typical size of the prediction error in daily-return. Using both lets us see whether the model can accurately explain and how large its errors were.
 
 ### Both Models Performance Over Time Compared To Actual Stock Prices
 <img width="1395" height="594" alt="image" src="https://github.com/user-attachments/assets/7359c419-0e7e-41cd-ba51-caa4395dc10f" />
@@ -293,4 +299,4 @@ Limitations That May Have Caused This:
   * The tweets aren't specifically about Tesla, Musk tweets about everything and anything that crosses his mind which creates a lot of noise.
   * The model uses daily aggregation, tweets may affect the price the same day, within an hour or even sooner, but there wasn't enough data on stock prices to capture that information.
   * Only looked at same-day vs next-day, if Musk tweeted on Saturday or Sunday it could effect Monday's stock movements but a one-day shift won't be enough to capture that.
-  * Tesla stock exploded growth around 2020. Before that it's price stayed relatively low and stable, but after 2020 it just took off and has very volatile movements, drastically swinging up and down in unpredictable ways. 
+  * Tesla stock exploded in growth around 2020. Before that its price stayed relatively low and stable, but after 2020 it just took off and has very volatile movements, drastically swinging up and down in unpredictable ways. Because the model was trained mostly on earlier data, it doesn't have enough current data to train on that would allow it to more accurately predict these newer more drastic swings.
