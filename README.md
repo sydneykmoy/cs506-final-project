@@ -187,15 +187,13 @@ Shows us how big changes in day-to-day stock price are and how often big changes
 
 ## Data Modeling
 
-<img width="1742" height="659" alt="image" src="https://github.com/user-attachments/assets/92d4a200-8122-43bf-9c0c-1dcb313c0454" />
   * Linear Regression Model:
     * To see if there's a linear relationship between tweet sentiment and Tesla stock returns. 
   * Random Forest
     * Relationship probably isn't linear therefore RF might perform better. 
 
 ## Preliminary Results
-<img width="1742" height="659" alt="image" src="https://github.com/user-attachments/assets/92d4a200-8122-43bf-9c0c-1dcb313c0454" />
-<img width="1796" height="698" alt="image" src="https://github.com/user-attachments/assets/90d3685f-a8f4-4185-8462-3f2cde636caa" />
+
 
 
 ### Linear Regression Model:
@@ -225,10 +223,6 @@ Shows us how big changes in day-to-day stock price are and how often big changes
      * avg_length      0.099213
      * avg_surprise    0.094639
      * avg_anger       0.094535
-
-<img width="1598" height="799" alt="image" src="https://github.com/user-attachments/assets/a75ad56b-0c78-4b76-8e02-303b7c495bdd" />
-
-<img width="1598" height="798" alt="image" src="https://github.com/user-attachments/assets/59faadc8-6013-4896-b1ac-52f10756a522" />
 
 
 ### Analysis
