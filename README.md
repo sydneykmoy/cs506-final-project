@@ -255,13 +255,17 @@ Relationship probably isn't linear therefore RF might perform better as it captu
    * R²: -0.1328
    * RMSE: 0.0384
    * Top 5 Most Important Features:
-   * <img width="898" height="491" alt="image" src="https://github.com/user-attachments/assets/db8b1424-4db9-4bcd-a494-b20e017922ff" />
+
+<img width="898" height="491" alt="image" src="https://github.com/user-attachments/assets/db8b1424-4db9-4bcd-a494-b20e017922ff" />
+
      * Average Values: 0.109305, 0.102604, 0.100030, 0.096507, 0.096434
  * Next Day:
    * R²: -0.0673
    * RMSE: 0.0373
    * Top 5 Most Important Features:
-     * <img width="896" height="489" alt="image" src="https://github.com/user-attachments/assets/e51cc221-38f4-4e95-86b4-ee1df8ff34f4" />
+
+<img width="896" height="489" alt="image" src="https://github.com/user-attachments/assets/e51cc221-38f4-4e95-86b4-ee1df8ff34f4" />
+
      * Average Values: 0.104537, 0.099552, 0.099213, 0.094639, 0.094535
 
 Used both types of models to try and cover all of my bases.
