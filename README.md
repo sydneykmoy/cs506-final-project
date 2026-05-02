@@ -100,7 +100,7 @@ Shows us the distribution of tweets found in Elon Musk's tweets.
 
 
 #### Histogram of Character Count
-<img width="797" height="500" alt="image" src="https://github.com/user-attachments/assets/8e7ab8b0-315e-4d61-b030-61cf3cca9ede" />
+<img width="756" height="486" alt="image" src="https://github.com/user-attachments/assets/49c5c4ea-8a8b-4280-af51-c10bc1e19f2f" />
 Shows us that Musk prefers shorter tweets as opposed to longer ones. 
 
 
@@ -196,6 +196,8 @@ Shows us how big changes in day-to-day stock price are and how often big changes
 
 ## Preliminary Results
 <img width="1742" height="659" alt="image" src="https://github.com/user-attachments/assets/92d4a200-8122-43bf-9c0c-1dcb313c0454" />
+<img width="1796" height="698" alt="image" src="https://github.com/user-attachments/assets/90d3685f-a8f4-4185-8462-3f2cde636caa" />
+
 
 ### Linear Regression Model:
   * Same Day:
@@ -224,6 +226,7 @@ Shows us how big changes in day-to-day stock price are and how often big changes
      * avg_length      0.099213
      * avg_surprise    0.094639
      * avg_anger       0.094535
+
 
 ### Analysis
 Negative R² values means both models are performing even worse than just predicting the stock return every day. 
