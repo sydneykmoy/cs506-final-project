@@ -63,6 +63,7 @@ To check your Python version on Windows, in powershell run: py --version
 2. Install required packages by running "make install"
 3. Run the project by running "make run"
    * If that doesn't work open up a terminal and run "python main.py" or "py main.py" for Windows to run the entire project
+   * In order to create/see the visualizations shown below you have to uncomment out some lines in the main file (they're labeled)
 
 
 ## Project Goals
