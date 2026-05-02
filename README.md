@@ -168,7 +168,8 @@ Shows us how big changes in day-to-day stock price are and how often big changes
   * Trimmed the two datasets so that they were looking at the same time period
   * Aggregated the multiple tweets per day by creating new features (to be used in our model)
     * We want to know the total daily reach because that gives a better sense of how many people may act upon his words
-      * Created columns for the total sum of likes, retweets, and views across all his tweets that day
+      * Created columns for the total sum of likes and retweets across all his tweets that day
+      * Removed views because missing values before 2023 means that 60% of my dataset has 0 views for those tweets, although after testing found that removing total_views from the feature set produced negligible changes in model performance, which tells us that it carried no meaningful predictive signal
 
     * We want to know the overall emotional tone of the day's tweets because that may effect the price of Tesla (if the tweet is angrier it may be due to something that negatively impacts Tesla, which may drive the price down, and vice versa if it's happier, etc.)
       * Created features for the mean of the joy, anger, fear, sadness, neutral, disgust, and surprise scores of all his tweets from that day
@@ -186,17 +187,20 @@ Shows us how big changes in day-to-day stock price are and how often big changes
 
 
 ## Data Modeling
+Created a Linear Regression Model and a Random Forest Model for same-day predictions and next-day predictions. 
+  * Target (Label) Variable: The label we were predicting for was the daily return (percent change in Tesla's adjusted close price)
+  * Same-Day Prediction: Merged tweets dataset with Tesla's stock return for the same day. This looked at whether tweets released that day had an impact on the stock return that day. 
+  * Next-Day Prediction: Merged tweets dataset with Tesla's stock return for the next day. This looked at whether tweets released the previous day had an impact on the stock return that day.
+  * Split the datasets into 80% training data and 20% testing data
+    * Shuffle was set to false because stock data is based on time which is why we used earlier data for training and later data for testing. 
 
-  * Linear Regression Model:
-    * To see if there's a linear relationship between tweet sentiment and Tesla stock returns. 
-  * Random Forest
-    * Relationship probably isn't linear therefore RF might perform better. 
 
-## Preliminary Results
-
-
+## Results
+<img width="897" height="497" alt="image" src="https://github.com/user-attachments/assets/2cbcff51-39f5-4bff-845e-327ba0ca318a" />
+<img width="896" height="488" alt="image" src="https://github.com/user-attachments/assets/159fe243-0b4f-41f6-be90-c932e90c1572" />
 
 ### Linear Regression Model:
+Used to see if there's a linear relationship between tweet sentiment and Tesla stock returns. Tried to see if higher fear, anger, retweets, or tweet count corresponded with higher or lower returns. 
   * Same Day:
     * R²: -0.0424
     * RMSE: 0.0368
@@ -205,10 +209,12 @@ Shows us how big changes in day-to-day stock price are and how often big changes
     * RMSE: 0.0367
 
 ### Random Forest
+Relationship probably isn't linear therefore RF might perform better as it captures nonlinear relationships.
   * Same Day:
    * R²: -0.1328
    * RMSE: 0.0384
    * Top 5 Most Important Features:
+   * <img width="898" height="491" alt="image" src="https://github.com/user-attachments/assets/db8b1424-4db9-4bcd-a494-b20e017922ff" />
      * avg_fear          0.109305
      * avg_disgust       0.102604
      * total_likes       0.100030
@@ -218,6 +224,7 @@ Shows us how big changes in day-to-day stock price are and how often big changes
    * R²: -0.0673
    * RMSE: 0.0373
    * Top 5 Most Important Features:
+     * <img width="896" height="489" alt="image" src="https://github.com/user-attachments/assets/e51cc221-38f4-4e95-86b4-ee1df8ff34f4" />
      * avg_fear        0.104537
      * avg_disgust     0.099552
      * avg_length      0.099213
@@ -225,12 +232,27 @@ Shows us how big changes in day-to-day stock price are and how often big changes
      * avg_anger       0.094535
 
 
+Used both types of models to try and cover all of my bases.
+
+### Both Models Performance Over Time Compared To Actual Stock Prices
+<img width="1395" height="594" alt="image" src="https://github.com/user-attachments/assets/7359c419-0e7e-41cd-ba51-caa4395dc10f" />
+<img width="1399" height="586" alt="image" src="https://github.com/user-attachments/assets/ca508cb2-7e97-49da-a7e8-e4fe01b921cb" />
+
 ### Analysis
-Negative R² values means both models are performing even worse than just predicting the stock return every day. 
-Why This Is?
-  * Hundreds of factors affect stock prices, just tweet sentiment isn't enough.
-  * Random Forest has a lower score than Logistic Regression which suggests that the model is overfitting.
-  * Feature importance from RF is pretty similar across all 5 features which means there aren't any very stron predictors.
+#### Negative R² Values
+Negative R² values means both models are performing even worse than just predicting the average daily stock return of Tesla every day. Poor performance by the Linear Regression model means that the model isn't finding a useful linear relationship between tweet sentiment and Tesla stock movement. An even poorer performance by Random Forest means that using a more flexible nonlinear model didn't manage to capture a useful relationship either. It also might suggest that the model is overfitting. The feature importance from RF is pretty similar across all 5 features which means there aren't any very strong predictors.
+
+#### RMSE Values
+RMSE scores around 0.0368 means the model's typical prediction error is around 3.68 percentage points in daily return. Daily stock returns are usually pretty small, therefore this is a pretty big error to have. This again shows us that the predictor isn't performing very well.
+
+#### Same Day Vs. Next Day
+The models for the next-day performed slightly better than the same-day models, however it's not enough of an improvement to show any significant different in the strength of predictive value.
+   
+#### What This Tells Us
+Tweet sentiment does not meaningfully predict Tesla stock's daily returns.
+Limitations That May Have Caused This:
+  * Hundreds of factors affect stock prices, like market conditions, interest rates, etc. and just tweet sentiment isn't enough.
   * The tweets aren't specifically about Tesla, Musk tweets about everything and anything that crosses his mind which creates a lot of noise.
-  * Missing view count values before 2023 means that 60% of my dataset has 0 views for those tweets, which definitely negatively impacts my results.
-    * Removing total_views from the feature set produced negligible changes in model performance, which tells us that it carried no meaningful predictive signal. 
+  * The model uses daily aggregation, tweets may affect the price the same day, within an hour or even sooner, but there wasn't enough data on stock prices to capture that information.
+  * Only looked at same-day vs next-day, if Musk tweeted on Saturday or Sunday it could effect Monday's stock movements but a one-day shift won't be enough to capture that.
+  * Tesla stock exploded growth around 2020. Before that it's price stayed relatively low and stable, but after 2020 it just took off and has very volatile movements, drastically swinging up and down in unpredictable ways. 
