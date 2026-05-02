@@ -8,27 +8,18 @@ Elon Musk, CEO of Tesla, is an extremely influential public figure with over 233
 This project analyzes the relationship between an influential tech CEO's X (Elon Musk) activity and corresponding stock price movements. It looks at whether Elon Musk’s tweet activity, tweet engagement, and emotion scores can help predict Tesla stock daily returns. It will use a dataset retrieved from Kaggle and another dataset retrived from Zenodo to find the correlation between the sentiment of his tweets and the return on Tesla for the next day (and the day after, and the day after that).
 
 ## Project Structure 
+
+```text
 cs506-final-project/
-
-│
 ├── main.py
-
 ├── data_processing.py
-
 ├── models.py
-
 ├── visualization.py
-
-│
-
+├── requirements.txt
+├── Makefile
 ├── The Complete Musk_comprehensive (Emotion and Personality Annotation).csv
-
-├── TSLA-2.csv
-
-│
-
-└── README.md
-
+└── TSLA-2.csv
+```
 
 main.py
 
