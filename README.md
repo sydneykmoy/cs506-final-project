@@ -215,28 +215,21 @@ Relationship probably isn't linear therefore RF might perform better as it captu
    * RMSE: 0.0384
    * Top 5 Most Important Features:
    * <img width="898" height="491" alt="image" src="https://github.com/user-attachments/assets/db8b1424-4db9-4bcd-a494-b20e017922ff" />
-     * avg_fear          0.109305
-     * avg_disgust       0.102604
-     * total_likes       0.100030
-     * total_retweets    0.096507
-     * avg_length        0.096434
+     * Average Values: 0.109305, 0.102604, 0.100030, 0.096507, 0.096434
  * Next Day:
    * R²: -0.0673
    * RMSE: 0.0373
    * Top 5 Most Important Features:
      * <img width="896" height="489" alt="image" src="https://github.com/user-attachments/assets/e51cc221-38f4-4e95-86b4-ee1df8ff34f4" />
-     * avg_fear        0.104537
-     * avg_disgust     0.099552
-     * avg_length      0.099213
-     * avg_surprise    0.094639
-     * avg_anger       0.094535
-
+     * Average Values: 0.104537, 0.099552, 0.099213, 0.094639, 0.094535
 
 Used both types of models to try and cover all of my bases.
 
 ### Both Models Performance Over Time Compared To Actual Stock Prices
 <img width="1395" height="594" alt="image" src="https://github.com/user-attachments/assets/7359c419-0e7e-41cd-ba51-caa4395dc10f" />
 <img width="1399" height="586" alt="image" src="https://github.com/user-attachments/assets/ca508cb2-7e97-49da-a7e8-e4fe01b921cb" />
+
+These charts show us that both the Linear Regression and Random Forest models produce predictions clustered close to zero, while the actual Tesla daily returns fluctuate a lot more. This indicates that the models fail to capture the magnitude and timing of major stock movements. Although the Random Forest model shows slightly better performance than Linear Regression, neither model follows the actual return very closely.
 
 ### Analysis
 #### Negative R² Values
