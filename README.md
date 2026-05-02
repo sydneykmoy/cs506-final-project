@@ -145,8 +145,7 @@ Shows us what Tesla's stock price looked like over the time period our dataset c
 
 
 #### Distribution of Daily Returns 
-<img width="676" height="374" alt="image" src="https://github.com/user-attachments/assets/ceed612b-9dbe-49eb-8f2a-ca19c5dde120" />
-
+<img width="799" height="396" alt="image" src="https://github.com/user-attachments/assets/8010f7ef-c3ad-4505-9b60-ee0d520bcddf" />
 Shows us how big changes in day-to-day stock price are and how often big changes happen (if there are any)
   * Computes each day's percent change and creates a histogram using those values
     * Narrow, tall bell curve centered at 0  &rarr; mostly small, predictable daily moves
