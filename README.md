@@ -22,20 +22,16 @@ cs506-final-project/
 ```
 
 main.py
-
-Runs the full project. It loads the data, processes the data, trains the models, evaluates performance, and creates visualizations.
+  * Runs the full project. It loads the data, processes the data, trains the models, evaluates performance, and creates visualizations.
 
 data_processing.py
-
-Handles loading, cleaning, date conversion, trimming, tweet aggregation, feature engineering, same-day merging, and next-day merging.
+  * Handles loading, cleaning, date conversion, trimming, tweet aggregation, feature engineering, same-day merging, and next-day merging.
 
 models.py
-
-Contains the model training and evaluation function. It trains Linear Regression and Random Forest models and reports R², RMSE, predictions, and feature importances.
+  * Contains the model training and evaluation function. It trains Linear Regression and Random Forest models and reports R², RMSE, predictions, and feature importances.
 
 visualization.py
-
-Contains plotting functions for model metrics, top feature importances, and model performance over time.
+  * Contains plotting functions for model metrics, top feature importances, and model performance over time.
 
 ## How to Get Started
 ### Supported Environment
