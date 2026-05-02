@@ -24,6 +24,10 @@ If that isn't feasible then the goal would be to successfully predict how sentim
 * Specifically, we would be looking at if we could correctly determine whether the aggregrate tweets had positive/negative sentiments (and to what degree are they positive/negative) and correctly predict whether the price of Tesla was positively/negatively impacted (if the price hit a high or a low during the day or if the closing price was greater than/less than the opening price). 
 
 
+## How to Run and Build The Code
+
+
+
 ## Data Collection Plan
 Creating a dataset from the Kaggle dataset and the dataset found on Zenodo. The dataset found on Zenodo already includes the sentiment analysis of each tweet so the next steps would be creating a new dataset that combines it with the dataset of stock prices, matching values based on the date that the tweet was created and the price of the stock price. 
 
@@ -150,25 +154,12 @@ Shows us how big changes in day-to-day stock price are and how often big changes
 
 ## Data Processing
 ### Elon Musk Tweets:
-  * Checked the shape of the dataframe: (60567, 23)
-  * Checked the data types of the columns of the df
-    * str: text, characters, target, type, created_at, emotion
-    * int64: favorite_count, retweet_count, reply_count, view_count
-    * object: tweet_id
-      * This kept throwing a "DtypeWarning: Columns (0: tweet_id) have mixed types. Specify dtype option on import or set low_memory=False." which I resolved by specifying dtype on import.
-    * float64: neutral, fear, anger, joy, disgust, sadness, surprise, agreeableness, openness, conscientiousness, extraversion, neuroticism
-  * Converted the created_at (date) column into a datetime type so that it matches with the Tesla dataset
-    * Had to set format='mixed', which means each format will be inferred for each individual element, because some hours were written with single digits (ex. 0:59, 1:16) while other were written using double digits (ex. 19:14, 23:47)
-    * Had to sort the dataset for the Musk Tweets to match the order of the Tesla tweets dataset
-  * Checked for any missing values in the columns
-    * Only text had one missing value
-  * Dropped unnecessary columns
-    * Columns Dropped: text, target, tweet_id
+  * Checked for missing values, converted the created_at column into a datetime type and sorted it to match the Tesla dataset, and converted the characters column from string to int to make it easier to work with later on while handling rows that had a non-numeric value by removing them
+  * Dropped unnecessary columns:
+    * text, target, tweet_id
       * Because sentiment analysis has already been performed
-    * Columns Dropped: agreeableness, openness, conscientiousness, extraversion, neuroticism
-      * Because these are analyses on Elon Musk's personality in his tweets, which is unnecessary for stock price prediction
-  * Converted the characters column from string to int to make it easier to work with later on
-    * When trying to convert the characters column I discovered that some of the rows contained a non-numeric value "#VALUE!" and removed those rows.
+    * agreeableness, openness, conscientiousness, extraversion, neuroticism
+      * Because these are analyses on Elon Musk's personality in his tweets, which is unnecessary for stock price prediction, and relates more to the psychology behind him as a person
 
 ### Stock Prices:
   * Converted date column into datetime types so that it matches with the Tweets dataset
@@ -178,29 +169,18 @@ Shows us how big changes in day-to-day stock price are and how often big changes
   * Trimmed the two datasets so that they were looking at the same time period
   * Aggregated the multiple tweets per day by creating new features (to be used in our model)
     * We want to know the total daily reach because that gives a better sense of how many people may act upon his words
-      * total_likes: sum of likes across all his tweets that day
-      * total_retweets: sum of retweets across all his tweets that day
-      * total_views: sum of views across all his tweets that day
+      * Created columns for the total sum of likes, retweets, and views across all his tweets that day
 
-    * We want to know the overall emotional tone of the day's tweets, which is why we take the mean of each emotion score
-      * avg_joy: mean of the joy emotion scores of all his tweets from that day
-      * avg_anger: mean of the anger emotion scores of all his tweets from that day
-      * avg_fear: mean of the fear emotion scores of all his tweets from that day
-      * avg_sadness: mean of the sadness emotion scores of all his tweets from that day
-      * avg_neutral: mean of the neutral emotion scores of all his tweets from that day
-      * avg_disgust: mean of the disgust emotion scores of all his tweets from that day
-      * avg_surprise: mean of the surprise emotion scores of all his tweets from that day
+    * We want to know the overall emotional tone of the day's tweets because that may effect the price of Tesla (if the tweet is angrier it may be due to something that negatively impacts Tesla, which may drive the price down, and vice versa if it's happier, etc.)
+      * Created features for the mean of the joy, anger, fear, sadness, neutral, disgust, and surprise scores of all his tweets from that day
 
-    * We want to know what emotion dominated the day's tweets
-      * dominant_emotion: most common emotion of the day
+    * We want to know what emotion dominated the day's tweets because that gives us a bigger picture to look at which may have a bigger effect rather than just the emotional nuances of the tweet, so we created a feature for that. 
     
-    * Tweet frequency might be important
-      * tweet_count: how many tweets were tweeted that day
+    * Tweet frequency might be important so we created a feature that tells us how many tweets were tweeted that day. This could be important to look at because:
       * More tweets could mean an event/news that greatly effects the world -- and therefore the stock market -- has happened, more people are reached/influenced, etc.
       * Less tweets could mean a slowdown, nothing newsworthy and therefore influential has happened, etc.
      
-    * Character length could influence how much influence the tweet has
-      * avg_length: mean of the character lengths of the tweets of the day
+    * Character length could influence how much influence the tweet has so we created a feature that tells us the mean of the character lengths of the tweets of the day.
       * Longer tweets may contain more substance
       * Shorter tweets, like a tweet that consists of a single emoji, probably aren't going to have much influence
   * Combined the two datasets using the date column 
