@@ -6,7 +6,6 @@ import seaborn as sns
 
 
 def preliminary_data_visualizations(MuskTweets_df, Tesla_df):
-    """
     # Preliminary Data Visualizations
 
     # MuskTweets: Plots pie chart showing distribution of emotions found in his tweets
@@ -29,16 +28,7 @@ def preliminary_data_visualizations(MuskTweets_df, Tesla_df):
     plt.show()
 
     # TeslaStock: Describes the Tesla dataset by column
-    print(Tesla_df.describe())
-                    Open         High          Low        Close    Adj Close        Volume
-        count  3562.000000  3562.000000  3562.000000  3562.000000  3562.000000  3.562000e+03
-        mean     76.144584    77.814867    74.365471    76.126834    76.126834  9.689694e+07
-        std     102.704572   104.986967   100.219504   102.631107   102.631107  7.849683e+07
-        min       1.076000     1.108667     0.998667     1.053333     1.053333  1.777500e+06
-        25%      11.653167    11.956167    11.328833    11.680500    11.680500  4.793858e+07
-        50%      17.493334    17.713000    17.205334    17.474667    17.474667  8.242725e+07
-        75%     165.437496   169.744996   161.365005   166.289173   166.289173  1.226422e+08
-        max     411.470001   414.496674   405.666656   409.970001   409.970001  9.140820e+08
+    # print(Tesla_df.describe())
 
     # TeslaStock: Plots Histogram of Adjusted Close price and Volume
     Tesla_df[['Adj Close', 'Volume']].hist(bins=20, figsize=(12, 5))
@@ -55,13 +45,10 @@ def preliminary_data_visualizations(MuskTweets_df, Tesla_df):
     Tesla_df['Daily Return'].hist(bins=50, figsize=(8, 4))
     plt.title('Distribution of Daily Returns')
     plt.show()
-    """
 
-    pass
 
 
 def plot_tweet_engagement_over_time(MuskTweets_df):
-    """
     # MuskTweets: Plots time series of engagement metrics (likes, retweets, views)
     fig, axes = plt.subplots(3, 1, figsize=(14, 10), sharex=True)
     MuskTweets_df.plot(x='created_at', y='favorite_count', ax=axes[0], title='Likes Over Time')
@@ -71,9 +58,7 @@ def plot_tweet_engagement_over_time(MuskTweets_df):
         ax.yaxis.set_major_formatter(mticker.FuncFormatter(lambda x, _: f'{int(x):,}'))
     plt.tight_layout()
     plt.show()
-    """
 
-    pass
 
 
 def plot_model_metrics(results_same, results_next):
